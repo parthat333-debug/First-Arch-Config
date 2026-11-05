@@ -1,0 +1,56 @@
+@import "../theme/colors.css";
+
+* { font-family: "JetBrainsMono Nerd Font"; font-size: 13px; }
+
+/* Popup notifications */
+.notification-row { outline: none; background: transparent; }
+.notification-row .notification-background { padding: 6px 10px; }
+.notification-row .notification-background .notification {
+  background: @panel_bg;
+  border: 2px solid alpha(@accent, 0.6);
+  border-radius: 14px;
+  color: @fg;
+  padding: 4px;
+}
+.notification-row .notification-background .notification.critical { border-color: @danger; }
+.notification .summary { color: @fg; font-weight: bold; }
+.notification .body, .notification .time, .notification .app-name { color: alpha(@fg, 0.8); }
+.notification-action, .notification-default-action { background: transparent; border: none; color: @fg; }
+.notification-default-action:hover, .notification-action:hover { background: alpha(@accent, 0.15); border-radius: 10px; }
+.close-button { background: alpha(@fg, 0.12); color: @fg; border: none; border-radius: 100%; min-width: 22px; min-height: 22px; }
+.close-button:hover { background: @ws_active; color: @bg; }
+progressbar trough { background: alpha(@fg, 0.15); }
+progressbar progress { background: @ws_active; }
+
+/* Notification centre */
+.control-center {
+  background: @panel_bg;
+  border: 2px solid alpha(@accent, 0.6);
+  border-radius: 14px;
+  color: @fg;
+  margin: 10px 60px 10px 10px;
+}
+.control-center-list, .control-center-list-placeholder { background: transparent; color: alpha(@fg, 0.6); }
+.widget-title { color: @fg; font-size: 15px; font-weight: bold; margin: 10px; }
+.widget-title > button, .widget-inhibitors > button {
+  background: alpha(@fg, 0.08); color: @fg; border: none; border-radius: 8px; padding: 4px 10px;
+}
+.widget-title > button:hover, .widget-inhibitors > button:hover { background: alpha(@accent, 0.25); }
+.widget-dnd { color: @fg; margin: 6px 10px; }
+.widget-dnd > switch { background: alpha(@fg, 0.15); border: none; border-radius: 10px; }
+.widget-dnd > switch:checked { background: @ws_active; }
+.widget-dnd > switch slider { background: @fg; border-radius: 10px; }
+.widget-buttons-grid { margin: 6px 10px; }
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: alpha(@fg, 0.08); color: @fg; border: none; border-radius: 8px; padding: 8px;
+}
+.widget-buttons-grid > flowbox > flowboxchild > button:hover { background: alpha(@accent, 0.25); }
+.widget-inhibitors { color: @fg; margin: 6px 10px; }
+.blank-window { background: transparent; }
+.notification-group { background: transparent; }
+.notification-group .notification-group-headers,
+.notification-group .notification-group-header { color: @fg; }
+.notification-group .notification-group-buttons > button {
+  background: alpha(@fg, 0.12); color: @fg; border: none; border-radius: 100%;
+}
+.notification-group .notification-group-buttons > button:hover { background: @ws_active; color: @bg; }

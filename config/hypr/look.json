@@ -1,0 +1,12 @@
+{
+  "gaps_in": 0.0,
+  "gaps_out": 0.0,
+  "border": 1.0,
+  "rounding": 4.0,
+  "anim": true,
+  "ws_speed": 1.2,
+  "ws_style": "fade",
+  "grad": false,
+  "grad2": "#000000",
+  "angle": 0.0
+}

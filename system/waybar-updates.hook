@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Refreshing waybar update count...
+When = PostTransaction
+Exec = /usr/bin/pkill -RTMIN+9 waybar

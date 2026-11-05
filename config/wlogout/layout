@@ -1,0 +1,6 @@
+{ "label": "lock",     "action": "hyprlock",                         "text": "Lock",      "keybind": "l" }
+{ "label": "logout",   "action": "hyprctl dispatch 'hl.dsp.exit()'", "text": "Log out",   "keybind": "e" }
+{ "label": "screenoff", "action": "sleep 1; hyprctl dispatch 'hl.dsp.dpms(\"off\")'", "text": "Screen off", "keybind": "o" }
+{ "label": "suspend",  "action": "systemctl suspend",                "text": "Suspend",   "keybind": "u" }
+{ "label": "reboot",   "action": "systemctl reboot",                 "text": "Reboot",    "keybind": "r" }
+{ "label": "shutdown", "action": "systemctl poweroff",               "text": "Shut down", "keybind": "s" }

@@ -1,0 +1,13 @@
+{
+  "ac": {
+    "dim": 10,
+    "lock": 15,
+    "off": 40
+  },
+  "battery": {
+    "dim": 4,
+    "lock": 5,
+    "off": 5
+  },
+  "awake": false
+}

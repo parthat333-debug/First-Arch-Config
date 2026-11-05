@@ -1,0 +1,13 @@
+@import url("../theme/colors.css");
+@define-color theme_bg_color @bg;
+@define-color theme_fg_color @fg;
+@define-color theme_base_color shade(@bg, 0.85);
+@define-color theme_text_color @fg;
+@define-color theme_selected_bg_color @ws_active;
+@define-color theme_selected_fg_color @bg;
+@define-color borders alpha(@muted, 0.5);
+.background, headerbar, .titlebar { background-color: @bg; color: @fg; }
+entry, textview text, treeview.view, list, .view { background-color: shade(@bg, 0.85); color: @fg; }
+*:selected, *:selected:focus { background-color: @ws_active; color: @bg; }
+button:hover { background-color: alpha(@accent, 0.15); }
+switch:checked, scale highlight, progressbar progress, checkbutton check:checked, radiobutton radio:checked { background-color: @ws_active; }

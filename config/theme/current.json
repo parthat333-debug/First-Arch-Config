@@ -1,0 +1,14 @@
+{
+  "bg": "#282828",
+  "fg": "#ebdbb2",
+  "muted": "#928374",
+  "accent": "#fabd2f",
+  "danger": "#fb4934",
+  "term": 0.1,
+  "bar": 0.1,
+  "panel": 0.22,
+  "panel_bg": "#14141e",
+  "ws_fg": "#ffbe6f",
+  "ws_active": "#c64600",
+  "ws_size": 14
+}

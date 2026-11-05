@@ -1,0 +1,62 @@
+# Command library. Format:  Description | command
+# Lines starting with # are ignored. Add your own anywhere.
+
+# --- Desktop ---
+Restart the status bar | pkill waybar; waybar >/dev/null 2>&1 & disown
+Reload Hyprland config | hyprctl reload
+Check Hyprland config for errors | hyprctl configerrors
+Restart wallpaper | pkill awww-daemon; pkill -f "wallpaper.py daemon"; awww-daemon & disown; sleep 1; ~/.config/scripts/wallpaper.py daemon & disown
+Restart auto-lock manager | pkill -f idle-manager.py; ~/.config/scripts/idle-manager.py & disown
+Lock screen now | hyprlock
+Open theme panel | ~/.config/theme/panel.py
+Show all keybinds | ~/.config/scripts/keybinds.py
+
+# --- System info ---
+System summary | fastfetch
+Disk space | df -h / /home
+Biggest folders in home | du -sh ~/* 2>/dev/null | sort -rh | head -15
+Top RAM-hungry programs | ps aux --sort=-%mem | head -15
+Top CPU-hungry programs | ps aux --sort=-%cpu | head -15
+Battery details | upower -i $(upower -e | grep BAT)
+CPU temperature | cat /sys/class/thermal/thermal_zone*/temp | head -3
+Current power mode | powerprofilesctl get
+My IP addresses | ip -brief address
+
+# --- Packages ---
+Update system (pacman + AUR) | yay -Syu
+Search for a package | read -p "Search for: " q; pacman -Ss "$q"; yay -Ss "$q" | head -40
+Remove unused packages (orphans) | sudo pacman -Rns $(pacman -Qdtq)
+Clean package cache (keep last 2) | sudo paccache -rk2
+List packages I installed myself | pacman -Qe
+
+# --- Network ---
+List nearby WiFi networks | nmcli dev wifi list --rescan yes
+Restart WiFi | nmcli radio wifi off; sleep 2; nmcli radio wifi on
+Test internet connection | ping -c 4 archlinux.org
+Restart Bluetooth | sudo systemctl restart bluetooth
+
+# --- Troubleshooting ---
+Recent system errors | journalctl -p 3 -b --no-pager | tail -40
+Failed services | systemctl --failed
+Waybar log (live) | pkill waybar; waybar
+Download new wallpapers | ~/.config/scripts/get-wallpapers.sh 30
+
+# --- External drive ---
+Fix external drive (won't mount / dirty) | sudo ntfsfix -d /dev/sda1 && sudo mount -a && ls /mnt/passport | head
+Check external drive status | lsblk -f; mount | grep passport
+Open external drive folder | xdg-open /mnt/passport
+
+# --- Antivirus (ClamAV) ---
+Scan Downloads folder | clamscan -r -i ~/Downloads
+Scan external drive | clamscan -r -i /mnt/passport
+Scan a folder or file (type the path) | read -p "Path to scan: " p; clamscan -r -i "$p"
+Scan whole home folder (slow) | clamscan -r -i ~
+Update virus definitions now | sudo freshclam
+
+Restore my last session | ~/.config/scripts/session.py
+Update login screen (wallpaper + colours) | ~/.config/scripts/login-theme.py
+
+# --- Audio ---
+Fix laptop mic (built-in mic + noise cancel) | pactl set-card-profile alsa_card.pci-0000_00_1f.3-platform-skl_hda_dsp_generic "HiFi (HDMI1, HDMI2, HDMI3, Mic1, Speaker)"; sleep 1; pactl set-default-source mic.clean; pactl get-default-source
+Test microphone (record 5 s, play back) | arecord -d 5 -f cd /tmp/mic-test.wav && aplay /tmp/mic-test.wav
+Test speakers | speaker-test -c 2 -t wav -l 1

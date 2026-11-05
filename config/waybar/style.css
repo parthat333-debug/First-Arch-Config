@@ -1,0 +1,27 @@
+@import "../theme/colors.css";
+@import "../theme/bar-extra.css";
+
+* { font-family: "JetBrainsMono Nerd Font"; font-size: 14px; }
+
+window#waybar { background: @bar_bg; border-radius: 14px; color: @fg; }
+
+#custom-ws1, #custom-ws2, #custom-ws3, #custom-ws4, #custom-ws5, #custom-ws6, #custom-ws7, #custom-ws8, #custom-ws9, #custom-ws10 { color: @ws_fg; padding: 4px 0; margin: 1px 4px; border-radius: 8px; }
+#custom-ws1.active, #custom-ws2.active, #custom-ws3.active, #custom-ws4.active, #custom-ws5.active, #custom-ws6.active, #custom-ws7.active, #custom-ws8.active, #custom-ws9.active, #custom-ws10.active { color: @ws_active; background: alpha(@ws_active, 0.18); }
+
+#clock { font-weight: bold; padding: 8px 0; }
+#memory { padding: 8px 0; font-size: 11px; }
+#pulseaudio, #network, #bluetooth, #battery, #custom-theme, #custom-power { padding: 8px 0; }
+#custom-power { color: @danger; padding-bottom: 12px; }
+#pulseaudio, #network, #bluetooth, #battery, #custom-theme, #custom-power { padding-right: 3px; }
+#memory, #pulseaudio, #network, #bluetooth, #battery, #custom-theme, #custom-power { font-family: "JetBrainsMono Nerd Font Mono"; }
+#pulseaudio, #network, #bluetooth, #battery, #custom-theme, #custom-power { font-size: 23px; }
+#custom-notification { font-family: "JetBrainsMono Nerd Font Mono"; font-size: 22px; padding: 8px 0; }
+#custom-keys { font-family: "JetBrainsMono Nerd Font Mono"; font-size: 22px; padding: 8px 0; }
+#custom-security { font-family: "JetBrainsMono Nerd Font Mono"; font-size: 22px; padding: 8px 0; }
+#custom-updates { padding: 10px 0 6px; font-size: 12px; font-family: "JetBrainsMono Nerd Font Mono"; }
+#custom-updates.uptodate { color: @ws_fg; }
+#custom-updates.pending { color: @danger; font-weight: bold; }
+#custom-ram { font-family: "JetBrainsMono Nerd Font Mono"; font-size: 8px; padding: 8px 0; }
+#battery.charging { color: @ws_active; }
+#battery.warning:not(.charging) { color: @ws_fg; }
+#battery.critical:not(.charging) { color: @danger; }

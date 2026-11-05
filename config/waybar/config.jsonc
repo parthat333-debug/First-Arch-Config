@@ -1,0 +1,242 @@
+{
+  "layer": "top",
+  "position": "right",
+  "width": 44,
+  "margin-top": 10,
+  "margin-bottom": 10,
+  "margin-right": 6,
+  "modules-left": [
+    "custom/ws-listen",
+    "custom/ws1",
+    "custom/ws2",
+    "custom/ws3",
+    "custom/ws4",
+    "custom/ws5",
+    "custom/ws6",
+    "custom/ws7",
+    "custom/ws8",
+    "custom/ws9",
+    "custom/ws10",
+    "custom/updates"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/ram",
+    "pulseaudio",
+    "network",
+    "bluetooth",
+    "battery",
+    "custom/notification",
+    "custom/security",
+    "custom/keys",
+    "custom/theme",
+    "custom/power"
+  ],
+  "clock": {
+    "format": "{:%H\n%M}",
+    "tooltip-format": "{:%A %d %B}\n\n{calendar}",
+    "on-click": "pkill -f '^python3 .*calendar-panel.py' || ~/.config/scripts/calendar-panel.py"
+  },
+  "pulseaudio": {
+    "format": "",
+    "format-muted": "",
+    "tooltip-format": "Volume {volume}%",
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-disconnected": "",
+    "tooltip-format": "{essid}",
+    "on-click": "pkill -f '^python3 .*wifi-panel.py' || ~/.config/scripts/wifi-panel.py",
+    "on-click-right": "nm-connection-editor"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-on": "",
+    "format-off": "",
+    "format-disabled": "",
+    "format-connected": "",
+    "on-click": "blueman-manager"
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "{capacity}% remaining · {time}",
+    "on-click": "pkill -f '^python3 .*power-panel.py' || ~/.config/scripts/power-panel.py",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format-charging": "{icon}",
+    "format-plugged": "󰚥",
+    "tooltip-format-charging": "Charging {capacity}% · {time} until full",
+    "tooltip-format-plugged": "Plugged in · {capacity}%",
+    "format-time": "{H} h {M} min"
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip-format": "Power menu",
+    "on-click": "pkill wlogout || wlogout -b 6 -T 400 -B 400"
+  },
+  "custom/ws-listen": {
+    "exec": "~/.config/waybar/ws-listen.sh"
+  },
+  "custom/ws1": {
+    "exec": "~/.config/waybar/ws.sh 1",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 1 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws2": {
+    "exec": "~/.config/waybar/ws.sh 2",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 2 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws3": {
+    "exec": "~/.config/waybar/ws.sh 3",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 3 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws4": {
+    "exec": "~/.config/waybar/ws.sh 4",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 4 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws5": {
+    "exec": "~/.config/waybar/ws.sh 5",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 5 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws6": {
+    "exec": "~/.config/waybar/ws.sh 6",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 6 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws7": {
+    "exec": "~/.config/waybar/ws.sh 7",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 7 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws8": {
+    "exec": "~/.config/waybar/ws.sh 8",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 8 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws9": {
+    "exec": "~/.config/waybar/ws.sh 9",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 9 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "custom/ws10": {
+    "exec": "~/.config/waybar/ws.sh 10",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = 10 })'",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+  },
+  "memory": {
+    "interval": 5,
+    "format": "\n{percentage}%",
+    "tooltip-format": "RAM {used:0.1f} / {total:0.1f} GB",
+    "on-click": "kitty -e btop"
+  },
+  "reload_style_on_change": true,
+  "custom/ram": {
+    "exec": "~/.config/waybar/ram.sh",
+    "return-type": "json",
+    "interval": 5,
+    "on-click": "kitty -e btop"
+  },
+  "custom/theme": {
+    "format": "",
+    "tooltip-format": "Theme panel",
+    "on-click": "pkill -f '^python3 .*theme/panel.py' || ~/.config/theme/panel.py"
+  },
+  "custom/notification": {
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "tooltip-format": "Notifications (right-click: do not disturb)",
+    "escape": true
+  },
+  "custom/keys": {
+    "format": "",
+    "tooltip-format": "Keybinds",
+    "on-click": "pkill -f '^python3 .*keybind-panel.py' || ~/.config/scripts/keybind-panel.py"
+  },
+  "custom/security": {
+    "format": "",
+    "tooltip-format": "Security (antivirus)",
+    "on-click": "pkill -f '^python3 .*security-panel.py' || ~/.config/scripts/security-panel.py"
+  },
+  "custom/updates": {
+    "exec": "~/.config/waybar/updates.sh",
+    "return-type": "json",
+    "interval": 1800,
+    "signal": 9,
+    "on-click": "pkill -f '^python3 .*updates-panel.py' || ~/.config/scripts/updates-panel.py"
+  }
+}

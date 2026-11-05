@@ -1,0 +1,16 @@
+@import url("../theme/colors.css");
+@define-color window_bg_color @bg;
+@define-color window_fg_color @fg;
+@define-color view_bg_color shade(@bg, 0.85);
+@define-color view_fg_color @fg;
+@define-color headerbar_bg_color @bg;
+@define-color headerbar_fg_color @fg;
+@define-color card_bg_color shade(@bg, 1.15);
+@define-color card_fg_color @fg;
+@define-color popover_bg_color @bg;
+@define-color popover_fg_color @fg;
+@define-color dialog_bg_color @bg;
+@define-color dialog_fg_color @fg;
+@define-color accent_bg_color @ws_active;
+@define-color accent_fg_color @bg;
+@define-color accent_color @ws_fg;
